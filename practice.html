@@ -5,28 +5,32 @@
     <title>Document</title>
 </head>
 <body>
+<!-- Simple test printing & Concatinating strings: -->
     <script>
         var s1 = "Masha is ";
         var s2 = "awesome!";
         document.write(s1 + s2 + "<br>");
     </script>
-<!--     <script>
+<!-- Else If statements: -->
+    <script>
         var one = 3;
         var two = 5;
         if (2 > 3) {
-            alert("Hello!");
+            alert("Hello!");  //Pop up window
         } else if (6 > 5) {
             alert("Bye!");
         } else {
             document.write("Sophie");
         }
-    </script> -->
-    <script type="text/javascript">
+    </script>
+<!-- For Loop (classic): -->
+    <script>
         for (i=1; i<=5; i++) {
             document.write(i + "<br>");
         }
     </script>
     <hr>
+<!-- Do While Loop: -->
     <script>
         var i=20;
         do {
@@ -36,6 +40,7 @@
         while (i<=25);
     </script>
     <hr>
+<!-- Break: -->
     <script>
         for (i=0; i<=25; i++) {
             if (i===5) {
@@ -43,6 +48,17 @@
             }
             document.write(i + "<br>");
         }
+    </script>
+    <hr>
+
+
+<!-- Practice functions:  -->
+    <script>
+        function myFunc(a,b) {
+            return a*b;
+        }
+        var x = myFunc(5,6);
+        document.write(x);
     </script>
 </body>
 </html>
