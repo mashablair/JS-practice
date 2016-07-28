@@ -17,12 +17,13 @@
         var two = 5;
         if (2 > 3) {
             alert("Hello!");  //Pop up window
-        } else if (6 > 5) {
-            alert("Bye!");
+        } else if (6 < 5) {
+            alert("Practicing JavaScript is so much fun!\nClick 'OK' to continue.");
         } else {
             document.write("Sophie");
         }
     </script>
+    <hr>
 <!-- For Loop (classic): -->
     <script>
         for (i=1; i<=5; i++) {
@@ -60,5 +61,43 @@
         var x = myFunc(5,6);
         document.write(x);
     </script>
+    <hr>
+<!-- Or it can be written like this:  -->
+    <script>
+        function addNums(z,y) {
+            var c = z+y;
+            return c;
+        }
+        document.write( addNums(6,7) );
+    </script>
+    <hr>
+<!-- This function returns output as a pop up:  -->
+    <script>
+        function test(number) {
+           while(number < 5) {
+              number++;
+           }
+           return number;
+        }
+        // alert(test(2));
+    </script>
+<!-- JS Objects:  -->
+    <script>
+        var person = {
+            name: "Sophie", age: 1,
+            favToy: "Ball", mother: "Maria"  //objects are containers for named values
+        };
+        var x = person.age;  //how to access objects property
+        document.write(x + "<br>");
+        document.write(person.name.length); //how to count the number of characters in a property or string
+    </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
