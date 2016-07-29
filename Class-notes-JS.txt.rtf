@@ -1,346 +1,406 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-\margl1440\margr1440\vieww21780\viewh15380\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+JavaScript on SoloLearn.com
 
-\f0\fs36 \cf0 JavaScript on SoloLearn.com\
-\
-Here are the notes I've been taking while taking this course:\
-\
-JS scripting language works inside the web browser.  Website scripts run either client side (brownser, ex. html, css, js) or server side (server of the website, ex. php, ruby).  \
-\
-JS is a client side scripting language.  It runs on my computer after I've loaded the web page containing the script.  But as JS became more popular --> it's now used in apps, like Adobe Photoshop + in server side, like Node.js and Google Apps Script.\
-\
-JS lives inside the html doc. It must be inserted in <script></script>.  And be placed in <head> or <body>.  \
-\
-Ex.:\
+Here are the notes I've been taking while taking this course:
 
-\i <body>\
-  <script>document.write("Hello world!");</script>\
+JS scripting language works inside the web browser.  Website scripts run either client side (brownser, ex. html, css, js) or server side (server of the website, ex. php, ruby).  
+
+JS is a client side scripting language.  It runs on my computer after I've loaded the web page containing the script.  But as JS became more popular --> it's now used in apps, like Adobe Photoshop + in server side, like Node.js and Google Apps Script.
+
+JS lives inside the html doc. It must be inserted in <script></script>.  And be placed in <head> or <body>.  
+
+Ex.:
+<body>
+  <script>document.write("Hello world!");</script>
 </body>
-\i0 \
-\
-(It will print Hello world! to the browser.) \
-\
-\
 
-\i document.write()
-\i0  -- is a function that writes a string, text or html.  It should only be used for testing.  \
-\
-Just like in html, we can use <tags> to format text for JS.  Ex.: document.write("<h1>Hello World!</h1>");\
-\
-Adding JS to a page:  any number of scripts can be added to html file. Typically <script> is placed in the <head>. But if placing <script> in <body> - place it at the bottom to improve page load and avoid 'white screen of death'.  So that html display is not blocked by script loading.   <script> no longer requires \'91language\'92 and \'91type\'92 attributes. \
-\
-Ex.: \
+(It will print Hello world! to the browser.) 
 
-\i <script>alert(\'93This is my alert box!\'94);</script>
-\i0 \
-\
-(cool pop up box!)\
-\
-\
-To use external script: \
-<head>\
-	<title>\'85</title>\
-	<script src=\'93helper.js\'94></script>\
-</head>\
-\
-External scripts can\'92t contain <script> tags.  Ex. to code the same pop up box in helper.js file: \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
-\cf0 \
-alert(\'93This is my alert box!\'94);\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-External scripts can be placed in <head> or <body>.  Advantages: \
-- separates html from js code,\
-- easier to read and maintain code, \
-- speeds up page load\
-\
-Comments in JS:  // or /**/ - for a multi-line comments!\
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
 
-\b \cf0 Variables
-\b0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-Variables - containers for storing data values.  Can change throughout the program.  Vars are case sensitive. \
-\
-\'91 = \'91 is the assignment operator, not \'91equal to\'92 sign. \
-\
-Var can be declared without a value \'97> undefined value.  Using vars is great: x can be in 10000x lines of code and you can change it once and it will change them all!\
-\
-Statement - every written instruction.  Separated by \'91 ; \'91 \
-\
-Var names must be: \
-- 1st char must be: a letter, \'91_\'92, or \'91$\'92 \
-- subsequent chars must be:  letters, numbers, \'91_\'92, or \'91$\'92\
-- can\'92t have math or logical operators\
-- no spaces\
-\
-There is a list of reserved words in JS that can\'92t be used as var names (ex.: abstract, new, in, const, break, short, super, this, etc.)\
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+document.write() -- is a function that writes a string, text or html.  It should only be used for testing.  
 
-\b \cf0 Data Types
-\b0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-Data type - types of values that a program can work with.  JS vars can hold many data types, ex. numbers, strings, arrays, etc.  (JS doesn\'92t define different types of numbers.)  Numbers are always stored as double precision flowing point numbers.\
-\
-Strings can have quotes inside, as long as different type of quotes are used.  To use special chars inside strings, use backslash ( \\ ). \
-\
-Ex.:  \'93I\\\'92m awesome.\'94 \
-	\\n  \'97  new line\
-	\\r  \'97 carriage return\
-	\\t  \'97 tab\
-	\\b  \'97 backspace\
-	\\f  \'97 form feed\
-\
-False Boolean values:  0, null, undefined, \'93   \'93, false. \
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+Just like in html, we can use <tags> to format text for JS.  Ex.: document.write("<h1>Hello World!</h1>");
 
-\b \cf0 Operators  
-\b0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-++  Increment by 1.   \'97  Decrement by 1.  \
-Ex.:  var a=10; a++;  \'97> a=11\
-	var a=10; a\'97; \'97> a=9\
-\
-% is a modulus operator and it returns the division remainder (what\'92s left over). \
-\
-Increment/Decrement:  \
+Adding JS to a page:  any number of scripts can be added to html file. Typically <script> is placed in the <head>. But if placing <script> in <body> - place it at the bottom to improve page load and avoid 'white screen of death'.  So that html display is not blocked by script loading.   <script> no longer requires ‘language’ and ‘type’ attributes. 
 
-\i var a=0, b=10;\
-var a=b++; \
-\'97> a=10
-\i0  (returns the original number first), b=11 (then increments).  \
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+Ex.: 
+<script>alert(“This is my alert box!”);</script>
 
-\i \cf0 var a=0, b=10;\
-var a=++b; \
-\'97> a=11, b=11 
-\i0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-x += y \'97> x = x+y\
-x /= y \'97 x = x/y\
-\
-Comparison operators:  == or ===\
-\
-== checks if operands\'92 values are equal.  It might convert them into the same type.  \'97> don\'92t use them.  \
-\
-==  - equal to\
-===  - identical to (equal AND same type)\
-!=  - not equal to\
-!==  - not identical \
-\
-Arguments must be of same type when comparing.  \
-\
-\
-Logical and Boolean Operators:  \
-\
-true means 1,  false means 0\
-They are very useful when working with databases, esp. forms.  They evaluate expressions and return true or false.  \
-\
-\
-Logical operators:  \
-\
-AND  && - returns true if both operands are true\
-OR  || - returns true if one operand is true\
-NOT  ! - returns true if operand is false, and false if operand is true\
-\
-Ex.:  (4>2) && (10<15)  \'97>  true\
-	 var1 && var2 \'97> false (where var1 is true, and var2 is false)\
-\
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+(cool pop up box!)
 
-\b \cf0 Conditionals
-\b0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
 
-\b If: 
-\i\b0 \
-\
-if (condition) \{\
-	statement(s); \
-\}
-\i0 \
-\
-The statement will be executed if condition is true.  Ex.: \
-\
+To use external script: 
+<head>
+	<title>…</title>
+	<script src=“helper.js”></script>
+</head>
 
-\i if (5>3) \{\
-	alert(\'93Hello!\'94);\
-\}
-\i0 \
-\
-Case sensitive.  If condition is false, code does nothing and moves on to a new line.  \
-\
+External scripts can’t contain <script> tags.  Ex. to code the same pop up box in helper.js file: 
 
-\b Else: 
-\b0 \
-\
+alert(“This is my alert box!”);
 
-\i if (condition) \{\
-	statement;\
-\} else \{\
-	some other statement;\
-\}
-\i0 \
-\
-There is no comma between \} \{\
-\
+External scripts can be placed in <head> or <body>.  Advantages: 
+- separates html from js code,
+- easier to read and maintain code, 
+- speeds up page load
 
-\b Else If: 
-\b0 \
-\
-If the first condition is false, we can make another condition: \
-\
-var a=5; \
-if (a===1) \{\
-	document.write(\'93Hello\'94);\
-\} else if (a===2) \{\
-	document.write(\'93Yeah\'94);\
-\} else \{\
-	document.write(\'93Bye\'94);\
-\}\
-\
-I can write as many else if statements as I want.  \
-\
+Comments in JS:  // or /**/ - for a multi-line comments!
 
-\b Switch: 
-\b0 \
-\
-If I need to test for multiple conditions for different actions \'97> more effective than multiple \'91else ifs\'92.  To perform different actions based on different conditions: \
-\
-switch (expression) \{\
-	case n1:\
-		statements\
-		break;\
-	case n2:\
-		statements\
-		break; \
-	case n3:\
-		statements\
-		break; \
-	default:\
-		statements\
-\}\
-\
-\'91default\'92 - it will run the code if no match is found, but the default block is optional.  \
-\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc\partightenfactor0
+Variables
 
-\b \cf0 Loops  
-\b0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-3 types of loops:  for, while, and do while.  \
-\
+Variables - containers for storing data values.  Can change throughout the program.  Vars are case sensitive. 
 
-\b Classic For Loop:
-\b0  has 3 components (statements): \
-\
+‘ = ‘ is the assignment operator, not ‘equal to’ sign. 
 
-\i for ( statement1;  statement2;  statement3 ) \{\
-	code; \
-\}
-\i0 \
-\
+Var can be declared without a value —> undefined value.  Using vars is great: x can be in 10000x lines of code and you can change it once and it will change them all!
 
-\i statement1
-\i0  is executed before the loop. I can initiate more than one value in statement1 (use commas).  \
+Statement - every written instruction.  Separated by ‘ ; ‘ 
 
-\i statement2
-\i0  defines the condition for running the loop.  Is optional. \
+Var names must be: 
+- 1st char must be: a letter, ‘_’, or ‘$’ 
+- subsequent chars must be:  letters, numbers, ‘_’, or ‘$’
+- can’t have math or logical operators
+- no spaces
 
-\i statement3
-\i0  executed each time after the loop has run.  Also optional.  If omitted, increments value inside loop.  \
-\
-for ( i=1;  i<=5;  i++ ) \{\
-	document.write(i); \
-\}\
-\'97>  1,2,3,4,5\
-\
-\
+There is a list of reserved words in JS that can’t be used as var names (ex.: abstract, new, in, const, break, short, super, this, etc.)
 
-\b While Loop:
-\b0   repeats as long as condition is true.  \
-\
+Data Types
 
-\i while (condition) \{\
-	code; \
-\}
-\i0 \
-\
-Make sure condition eventually becomes false, otherwise infinite loop. \
-\
-\
-Do While Loop:  executes code once, before checking the loop (condition), then runs the loop.  \
-\
+Data type - types of values that a program can work with.  JS vars can hold many data types, ex. numbers, strings, arrays, etc.  (JS doesn’t define different types of numbers.)  Numbers are always stored as double precision flowing point numbers.
 
-\i do \{\
-	code; \
-\}\
-while (condition);
-\i0 \
-\
-So it will always execute once!  \
-\
+Strings can have quotes inside, as long as different type of quotes are used.  To use special chars inside strings, use backslash ( \ ). 
 
-\i var i=20; \
-do \{\
-	document.write(i);\
-	i++;\
-\}\
-while (i<=20);
-\i0 \
-\
-\
+Ex.:  “I\’m awesome.” 
+	\n  —  new line
+	\r  — carriage return
+	\t  — tab
+	\b  — backspace
+	\f  — form feed
 
-\b Break:
-\b0  it jumps out of the loop and continues executing the code after the loop.  \
-\
+False Boolean values:  0, null, undefined, “   “, false. 
 
-\i for ( i=0;  i<=10;  i++ ) \{\
-	if (i===5) \{\
-		break\
-	\} \
-	document.write(i);\
-\}
-\i0 \
-\
-It ends the execution of the loop.  \
-\
+Operators  
 
-\b Continue statement
-\b0  - breaks only 1 iteration of the loop and continues with the next iteration.  \
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+++  Increment by 1.   —  Decrement by 1.  
+Ex.:  var a=10; a++;  —> a=11
+	var a=10; a—; —> a=9
+
+% is a modulus operator and it returns the division remainder (what’s left over). 
+
+Increment/Decrement:  
+var a=0, b=10;
+var a=b++; 
+—> a=10 (returns the original number first), b=11 (then increments).  
+
+var a=0, b=10;
+var a=++b; 
+—> a=11, b=11 
+
+x += y —> x = x+y
+x /= y — x = x/y
+
+Comparison operators:  == or ===
+
+== checks if operands’ values are equal.  It might convert them into the same type.  —> don’t use them.  
+
+==  - equal to
+===  - identical to (equal AND same type)
+!=  - not equal to
+!==  - not identical 
+
+Arguments must be of same type when comparing.  
+
+
+Logical and Boolean Operators:  
+
+true means 1,  false means 0
+They are very useful when working with databases, esp. forms.  They evaluate expressions and return true or false.  
+
+
+Logical operators:  
+
+AND  && - returns true if both operands are true
+OR  || - returns true if one operand is true
+NOT  ! - returns true if operand is false, and false if operand is true
+
+Ex.:  (4>2) && (10<15)  —>  true
+	 var1 && var2 —> false (where var1 is true, and var2 is false)
+
+
+Conditionals
+
+If: 
+
+if (condition) {
+	statement(s); 
 }
+
+The statement will be executed if condition is true.  Ex.: 
+
+if (5>3) {
+	alert(“Hello!”);
+}
+
+Case sensitive.  If condition is false, code does nothing and moves on to a new line.  
+
+Else: 
+
+if (condition) {
+	statement;
+} else {
+	some other statement;
+}
+
+There is no comma between } {
+
+Else If: 
+
+If the first condition is false, we can make another condition: 
+
+var a=5; 
+if (a===1) {
+	document.write(“Hello”);
+} else if (a===2) {
+	document.write(“Yeah”);
+} else {
+	document.write(“Bye”);
+}
+
+I can write as many else if statements as I want.  
+
+Switch: 
+
+If I need to test for multiple conditions for different actions —> more effective than multiple ‘else ifs’.  To perform different actions based on different conditions: 
+
+switch (expression) {
+	case n1:
+		statements
+		break;
+	case n2:
+		statements
+		break; 
+	case n3:
+		statements
+		break; 
+	default:
+		statements
+}
+
+‘default’ - it will run the code if no match is found, but the default block is optional.  
+
+Loops  
+
+3 types of loops:  for, while, and do while.  
+
+Classic For Loop: has 3 components (statements): 
+
+for ( statement1;  statement2;  statement3 ) {
+	code; 
+}
+
+statement1 is executed before the loop. I can initiate more than one value in statement1 (use commas).  
+statement2 defines the condition for running the loop.  Is optional. 
+statement3 executed each time after the loop has run.  Also optional.  If omitted, increments value inside loop.  
+
+for ( i=1;  i<=5;  i++ ) {
+	document.write(i); 
+}
+—>  1,2,3,4,5
+
+
+While Loop:  repeats as long as condition is true.  
+
+while (condition) {
+	code; 
+}
+
+Make sure condition eventually becomes false, otherwise infinite loop. 
+
+
+Do While Loop:  executes code once, before checking the loop (condition), then runs the loop.  
+
+do {
+	code; 
+}
+while (condition);
+
+So it will always execute once!  
+
+var i=20; 
+do {
+	document.write(i);
+	i++;
+}
+while (i<=20);
+
+
+Break: it jumps out of the loop and continues executing the code after the loop.  
+
+for ( i=0;  i<=10;  i++ ) {
+	if (i===5) {
+		break;
+	} 
+	document.write(i);
+}
+
+It ends the execution of the loop.  
+
+Continue statement - breaks only 1 iteration of the loop and continues with the next iteration.  
+
+for ( i=0;  i<=10;  i++ ) {
+	if (i===5) {
+		continue;
+	} 
+	document.write(i);
+}
+—> it will NOT print out 5!
+
+
+Functions
+
+Function is a block of code designed to perform a particular task.  Why?  Code reuse!  Define it once and use many times!  Use the same code with different arguments and —> different results.  
+
+JS function executes when ‘something’ invokes or calls it.  
+
+
+
+Then JS function reaches a return statement, the function stops executing.  Return is optional.  To return value:  
+
+function myFunc (a,b) {
+	return a*b;
+}
+var x = myFunc(5,6); 
+—> x=30
+
+If you don’t return anything —> undefined.  So return statement is placed at the end of the function description.  
+
+
+Alert Box
+
+There are 3 types of alert boxes:  
+
+Alert:  
+ex.  alert(“Hello!”);  
+It takes a single parameter.  
+
+Prompt:  
+var user = prompt(“Who are you?”);
+alert(user);
+
+It take 2 parameters.  
+
+Confirm Box:  
+var result = confirm(“Are you sure you wanna leave?”);
+if (result==true) {
+	alert(“Thanks for staying!);
+} else {
+	alert(“Bye!”); 
+}
+
+So “ok” returns true, and “cancel” returns false.  
+
+
+JS Objects
+
+Objects are also variables, but they can contain many values.  Objects are lists of values written as  name:value  pairs and separated wth commas.  name is a property, and value is a property value.  
+
+var person = {
+	name: “Sophie”, age: 1, 
+	favToy: “Ball”, favThing: “plane” 
+};
+
+Objects are containers for named values.  We can access object property in 2 ways: 
+objectName.propertyName
+or
+objectName[‘propertyName’]
+
+To count number of characters in a property or string: 
+
+var person = {
+	name: “Sophie”, 
+	age: 1
+}
+document.write(person.name.length);
+—> 6
+
+
+Object Methods - property that contains a function definition.  
+Syntax:  objectName.methodName();
+
+ex.:  document.write();
+
+So Method - is a function stored as object property.  
+
+Object Constructor:  takes parameters and assigns them to the object properties.  ‘this’ keyword refers to the current object (not a var):
+
+function person(name, age) {
+	this.name = name; 
+	this.age = age;
+}
+var Sophie = new person (“Sophie”, 1);
+var Elijah = new person (“Elijah”, 31); 
+
+To access:  Elijah.age (where Elijah is an object name, and age is property name).  
+
+:-o  An object’s properties are similar to variables, as methods are similar to functions.  
+
+function mathCalc (height, weight) {
+	this.height = height; 
+	this.weight = weight; 
+	this.sampleCalc = calculate; 
+}
+
+All this is object constructor.  ‘calculate’ is a method for the given object. 
+
+
+Core Objects
+
+Arrays:  store multiple values in a single var.  
+Literal method for writing arrays is preferred and recommended:  
+var cars = [“Murano”, “Saab”, “Jeep”]; 
+
+If trying to access index outside the array —> undefined value.  
+
+Array is a special type of object.  Array uses numbers to access its elements, whereas objects use names to access its elements.  
+
+ex.:  document.write(example[3]);  —> 4th member of the array
+
+JS arrays are dynamic:  I can declare an array without passing any arguments!  I can then add the elements dynamically, as many as I like, anytime later:  
+
+ex.: 
+var courses = new Array();
+	courses[0] = “html”; 
+	courses[1] = “css”;
+	…… 
+
+Array has ‘length’ property because it’s an object!  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
